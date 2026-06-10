@@ -69,4 +69,4 @@ with col2:
     for isim, veri in bolgeler.items():
         hesaplanan_skor = (veri[2]*w_gunes + veri[3]*w_egim + veri[4]*w_trafo + veri[5]*w_baki + veri[6]*w_yol) / 100
         st.metric(label=f"{isim} Bölgesi", value=f"{hesaplanan_skor:.1f} / 100")
-        st.progress(int(hesaplanan_skor))
+        st.progress(min(100, max(0, int(hesaplanan_skor))))
